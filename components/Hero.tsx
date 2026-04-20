@@ -1,6 +1,8 @@
 'use client'
 
 export default function Hero() {
+  const waitlistUrl = 'https://forms.gle/2RXq9xeSFU3BJcp49'
+
   const scrollToFeatures = () => {
     document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })
   }
@@ -100,6 +102,10 @@ export default function Hero() {
           cursor: pointer;
           transition: transform 0.2s, box-shadow 0.2s;
           white-space: nowrap;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          text-decoration: none;
         }
         .btn-waitlist:hover {
           transform: translateY(-2px) scale(1.03);
@@ -173,7 +179,14 @@ export default function Hero() {
         </p>
 
         <div className="cta-wrap">
-          <button className="btn-waitlist">🔥 Join the Waitlist</button>
+          <a
+            className="btn-waitlist"
+            href={waitlistUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🔥 Join the Waitlist
+          </a>
           <button className="btn-learn" onClick={scrollToFeatures}>See what&apos;s inside ↓</button>
         </div>
 
